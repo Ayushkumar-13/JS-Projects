@@ -1,0 +1,250 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    transition: all ease-in-out 0.4s;
+}
+
+body {
+    background-color: #E0E5B6;
+    text-align: center;
+}
+
+.container {
+    height: 70vh;
+    display: flex;
+    top: 10%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+}
+
+.game {
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Box Styles */
+.box {
+    height: 19.9vmin;
+    width: 18vmin;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    font-size: 8vmin;
+    color: #b0413e;
+    background-color: rgb(173, 173, 141);
+    border: 2px solid rgba(255, 215, 0, 0.5); /* Light yellow border initially */
+}
+
+.box:hover {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+@keyframes winGlow {
+    0% {
+        box-shadow: 0 0 1.5rem rgba(255, 215, 0, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 2rem rgba(255, 215, 0, 1);
+    }
+    100% {
+        box-shadow: 0 0 1.5rem rgba(255, 215, 0, 0.7);
+    }
+}
+
+/* Losing Pattern Highlight */
+.lose-pattern {
+    border: 3px solid #e74c3c; /* Red border for losing pattern */
+    box-shadow: 0 0 1.5rem rgba(231, 76, 60, 0.7); /* Red glow effect */
+    animation: loseShake 0.5s; /* Animation for shake effect */
+}
+#winner-message {
+    margin: 15px 0;
+    font-size: 20px;
+    font-weight: bold;
+  }
+@keyframes loseShake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+/* Buttons */
+.reset, .new-button {
+    padding: 1rem;
+    font-size: 1.25rem;
+    color: aliceblue;
+    background-color: black;
+    border-radius: 1rem;
+    border: none;
+}
+
+.new-button:hover {
+    cursor: pointer;
+    background-color: rgb(61, 61, 52);
+}
+
+.reset:hover {
+    cursor: pointer;
+    background-color: rgb(51, 72, 72);
+}
+
+/* Messages */
+.msg {
+    color: rgb(14, 81, 141);
+    font-size: 5vmin;
+    font-weight: bold;
+}
+
+.msg-container {
+    height: 10vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.hide {
+    display: none;
+}
+
+h1 {
+    font-family: 'Monoton';
+    font-weight: 300;
+    font-size: 2.6em;
+}
+
+.msg:hover {
+    cursor: pointer;
+}
+
+/* Disable Click and Visual Indication */
+.box.disabled {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+    pointer-events: none; /* Prevents click events */
+}
+
+/* Message Styles */
+.msg {
+    color: rgb(14, 81, 141);
+    font-size: 5vmin;
+    font-weight: bold;
+}
+
+.msg-container {
+    width: 100%;
+    position: absolute;
+    top: 5%; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hide {
+    display: none;
+}
+
+/* Winning Pattern Highlight */
+.win-pattern {
+    border: 3px solid #FFD700; /* Solid Gold border */
+    box-shadow: 0 0 1.5rem rgba(255, 215, 0, 0.7);
+
+    animation: winGlow 1s infinite; 
+}
+
+@keyframes winGlow {
+    0% {
+        box-shadow: 0 0 1.5rem rgba(255, 215, 0, 0.7);
+        
+    }
+    50% {
+        box-shadow: 0 0 2rem rgba(255, 215, 0, 1);
+
+    }
+    100% {
+        box-shadow: 0 0 1.5rem rgba(255, 215, 0, 0.7);
+    }
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 6vw;
+        margin-top: 2rem;
+    }
+
+    .msg-container {
+        top: 1rem;
+        gap: 1rem;
+        position: relative;
+        margin-bottom: 1rem;
+    }
+
+    .msg {
+        font-size: 6vw;
+    }
+
+    .container {
+        flex-direction: column;
+        margin-top: 1rem;
+        height: auto;
+    }
+
+    .game {
+        width: 90vmin;
+        height: 90vmin;
+        margin-bottom: 5em;
+    }
+
+    .box {
+        height: 30vmin;
+        width: 30vmin;
+    }
+
+    
+    .reset,
+    .new-button {
+        font-size: 1rem;
+        padding: 0.8rem 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 7vw;
+    }
+
+    .msg {
+        font-size: 7vw;
+    }
+
+    .box {
+        height: 30vmin;
+        width: 30vmin;
+    }
+
+    .msg-container {
+        margin-top: 1rem;
+    }
+    .game{
+        margin-top: 1em;
+        margin-bottom: 5em;
+    }
+    .main{
+        margin-top: 6rem;
+    }
+}
