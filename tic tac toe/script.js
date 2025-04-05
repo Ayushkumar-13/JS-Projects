@@ -58,6 +58,7 @@
     const showDraw = () => {
         msg.innerText = "It's a Draw!";
         msgcontainer.classList.remove("hide");
+        drawSound.play();
         stopAudio(drawSound)
     }
 
