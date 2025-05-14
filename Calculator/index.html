@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Calculator </title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+  
+
+  <h1 class="heading"> Calculator </h1>
+  <div class="calculator">
+
+  <form action="" id="container">
+ 
+    <input type="text" id="show" class="userinput" value="" placeholder="0">
+  
+    <br>
+
+    <div class="keys">
+    <input type="button" id="symbol" class="button" value="AC"  onclick="container.show.value = '' ">
+    <input type="button" id="symbol" class="button" value="DEL" onclick="container.show.value = container.show.value.toString().slice(0,-1) ">
+
+ 
+   <!--slice is used to pop the value from the right side.
+   slice ke inside two parameters pass hote hain and one starting index and the length from that 
+   index -->
+
+  <!--  string(0,-1) -1 means 0 ka minus 1 means rotate krega wo means first se last pe chala jaayega -->
+
+    <input type="button" id="symbol" class="button" value="." onclick="container.show.value += '.' ">
+    <input type="button" id="symbol" class="button" value="%" onclick="container.show.value += '%' ">
+    <br>
+
+    <input type="button" class="button" value="1" onclick="container.show.value += '1' ">
+    <input type="button" class="button" value="2" onclick="container.show.value += '2' ">
+    <input type="button" class="button" value="3" onclick="container.show.value +='3' ">
+    <input type="button" id="symbol" class="button" value="/" onclick="container.show.value +='/' ">
+    <br>
+
+    <input type="button" class="button" value="4" onclick="container.show.value += '4' ">
+    <input type="button" class="button" value="5" onclick="container.show.value +='5' ">
+    <input type="button" class="button" value="6" onclick="container.show.value +='6' ">
+    <input type="button" id="symbol" class="button" value="*" onclick="container.show.value +='*' ">
+    <br>
+
+    <input type="button" class="button" value=" 7" onclick="container.show.value +='7' ">
+    <input type="button" class="button" value="8" onclick=" container.show.value +='8' " >
+    <input type="button" class="button" value="9" onclick="container.show.value +='9' ">
+    <input type="button" id="symbol" class="button" value="-" onclick="container.show.value +='-' " >
+    <br>
+
+    <input type="button" class="button" value="00" onclick="container.show.value += '00' " >
+    <input type="button" class="button" value="0" onclick="container.show.value += '0' " >
+    <input type="button" id="equaltosymbol"  class="button" value="=" onclick="container.show.value = eval(container.show.value)">  
+     <!-- eval() har chiz ko evaluate karta hai iske andar display.show.value 
+     likhne se ye values ko evaluate krta hai -->
+    
+    <input type="button" id="symbol" class="button" value="+" onclick="container.show.value +='+' ">
+    <br>
+  </div>
+  </form>
+  </div>
+</body>
+</html>
